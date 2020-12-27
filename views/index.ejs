@@ -1,0 +1,35 @@
+<%- include('head.footer/header') %>
+<br>
+<div class="container">
+        <h1>Employee Information</h1>
+        <br>
+        <a href="/users/new">New User</a>
+        <br>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if (records.length >0){ %>
+              <% records.forEach(function(row){ %>
+              <tr>
+                <td><%= row.name %></td>
+                <td><%= row.email %></td>
+                <td><%= row.mobile %></td>
+                <td><a href="/users/edit/<%=row._id%> ">Edit</a></td>
+                <td><a href="/users/delete/<%=row._id%>">Delete</a></td>
+              </tr>
+              <% })}else{ %>
+                <tr>
+                    <td colspan="6">No Record Found</td>
+                  </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+
+<%- include('head.footer/footer') %> 
