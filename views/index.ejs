@@ -1,5 +1,6 @@
 <%- include('head.footer/header') %>
 <br>
+<!--
 <div class="container">
         <h1>Employee Information</h1>
         <br>
@@ -31,5 +32,54 @@
             </tbody>
           </table>
     </div>
+  -->
 
+
+    <div class="container-xl">
+      <div class="table-responsive">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div class="row">
+              <div class="col-sm-6">
+                <h2>Manage <b>Employees</b></h2>
+              </div>
+              <div class="col-sm-6">
+                <a href="/users/new" class="btn btn-success"> <i class="material-icons">&#xE147;</i> Add New Employee</a>
+                        
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%if (records.length >0){ %>
+              <% records.forEach(function(row){ %>
+              <tr>
+                <td><%= row.name %></td>
+                <td><%= row.email %></td>
+                <td><%= row.address %> </td>
+                <td><%= row.mobile %></td>
+                <td>
+                  <a href="/users/edit/<%=row._id%>" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a href="/users/delete/<%=row._id%>" class="delete" onclick="return confirm('Are you sure?')" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+              </tr>
+              <% })}else{ %>
+                <tr>
+                    <td colspan="6">No Record Found</td>
+                  </tr>
+                <% } %>
+            </tbody>
+              </table>
+              </div>
+              </div>
+              </div>
 <%- include('head.footer/footer') %> 

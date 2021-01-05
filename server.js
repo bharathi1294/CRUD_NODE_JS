@@ -9,7 +9,7 @@ mongoose.connect("mongodb://localhost:27017/crud", {
     useUnifiedTopology:true,
     useCreateIndex:true,
     useFindAndModify:false})
-
+    
 const db = mongoose.connection
 db.on('error',(error)=> console.error(error))
 db.on('open',()=> console.log("Database connected"))

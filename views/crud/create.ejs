@@ -6,17 +6,26 @@
         <form action="/users/new" method="POST">
             <div class="form-group">
                 <label for="text">Name:</label>
-                <input type="text" class="form-control" placeholder="Enter Name" name="name">
+                <input type="text" class="form-control" name="name" required>
               </div>
             <div class="form-group">
                 <label for="text">Email:</label>
-                <input type="text" class="form-control" placeholder="Enter email" name="email">
+                <input type="text" class="form-control" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="text">Address:</label>
+                <textarea class="form-control" rows="5" id="comment" name="address" required></textarea>
               </div>
             <div class="form-group">
                 <label for="text">Mobile Number:</label>
-                <input type="text" class="form-control" placeholder="Enter Mobile Number" name="mobile">
+                <input type="text" class="form-control" name="mobile" required>
               </div>
               <button class="btn btn-success">Add</button>
         </form>
+        <br>
+        <form action="/">
+          <button class="btn btn-danger">Cancel</button>
+        </form>
     </div>
+
 <%- include('../head.footer/footer') %> 
